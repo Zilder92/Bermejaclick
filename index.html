@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BermejaClick.co - Tu Comercio Local en Barrancabermeja</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1 class="logo">Bermeja<span class="logo-accent">Click</span>.co</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#promociones">Promociones</a></li>
+                    <li><a href="#turismo">Turismo</a></li>
+                    <li><a href="#hoteles">Hoteles</a></li>
+                    <li><a href="#comidas">Comidas</a></li>
+                    <li><a href="dashboard.html" class="btn-login">Acceso Comercios</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section / Banner Principal -->
+    <section class="hero">
+        <div class="hero-carousel">
+            <div class="carousel-slide active">
+                <div class="hero-content">
+                    <h2 class="hero-title">Ofertas del Día</h2>
+                    <p class="hero-subtitle">Descubre las mejores promociones de Barrancabermeja</p>
+                    <a href="#promociones" class="btn-primary">Ver Todas las Promociones</a>
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Turismo Local</h2>
+                    <p class="hero-subtitle">Explora los mejores planes de la ciudad</p>
+                    <a href="#turismo" class="btn-primary">Descubrir Planes</a>
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="carousel-slide">
+                <div class="hero-content">
+                    <h2 class="hero-title">Comidas en Promoción</h2>
+                    <p class="hero-subtitle">Saboréa los mejores descuentos gastronómicos</p>
+                    <a href="#comidas" class="btn-primary">Ver Ofertas</a>
+                </div>
+                <div class="hero-overlay"></div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="carousel-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- Filtros Rápidos -->
+    <section class="quick-filters">
+        <div class="container">
+            <h2 class="section-title">Explora por Categoría</h2>
+            <div class="filters-grid">
+                <div class="filter-card" data-category="comida">
+                    <div class="filter-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Comida</h3>
+                </div>
+                <div class="filter-card" data-category="turismo">
+                    <div class="filter-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Turismo</h3>
+                </div>
+                <div class="filter-card" data-category="hoteles">
+                    <div class="filter-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Hoteles</h3>
+                </div>
+                <div class="filter-card" data-category="ropa">
+                    <div class="filter-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Ropa</h3>
+                </div>
+                <div class="filter-card" data-category="servicios">
+                    <div class="filter-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicios</h3>
+                </div>
+                <div class="filter-card" data-category="entretenimiento">
+                    <div class="filter-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3>Entretenimiento</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones Destacadas -->
+    <section id="promociones" class="featured-promotions">
+        <div class="container">
+            <h2 class="section-title">Promociones Destacadas</h2>
+            <div class="promotions-grid">
+                <div class="promotion-card">
+                    <div class="promotion-badge">-30%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Oferta+1" alt="Promoción 1">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>2x1 en Hamburguesas Premium</h3>
+                        <p class="promotion-description">Disfruta de nuestras hamburguesas artesanales con el mejor descuento</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$25.000</span>
+                            <span class="price-new">$17.500</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Comida</span>
+                            <span class="promotion-date">Válido hasta: 30/12/2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">-40%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/1E90FF/FFFFFF?text=Oferta+2" alt="Promoción 2">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Tour por el Río Magdalena</h3>
+                        <p class="promotion-description">Recorrido completo por los puntos más emblemáticos de la ciudad</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$50.000</span>
+                            <span class="price-new">$30.000</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Turismo</span>
+                            <span class="promotion-date">Válido hasta: 15/01/2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">-25%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/228B22/FFFFFF?text=Oferta+3" alt="Promoción 3">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Noche de Hotel con Desayuno</h3>
+                        <p class="promotion-description">Hospedaje cómodo en el corazón de Barrancabermeja</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$120.000</span>
+                            <span class="price-new">$90.000</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Hoteles</span>
+                            <span class="promotion-date">Válido hasta: 20/01/2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">-35%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/DC143C/FFFFFF?text=Oferta+4" alt="Promoción 4">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Combo Familiar de Comida Rápida</h3>
+                        <p class="promotion-description">Perfecto para compartir en familia con el mejor precio</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$45.000</span>
+                            <span class="price-new">$29.250</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Comida</span>
+                            <span class="promotion-date">Válido hasta: 25/12/2024</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">-20%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/FF8C00/FFFFFF?text=Oferta+5" alt="Promoción 5">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Ropa de Verano - Liquidación</h3>
+                        <p class="promotion-description">Las mejores prendas para el clima de Barrancabermeja</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$80.000</span>
+                            <span class="price-new">$64.000</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Ropa</span>
+                            <span class="promotion-date">Válido hasta: 10/01/2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="promotion-card">
+                    <div class="promotion-badge">-50%</div>
+                    <div class="promotion-image">
+                        <img src="https://via.placeholder.com/400x300/4B0082/FFFFFF?text=Oferta+6" alt="Promoción 6">
+                    </div>
+                    <div class="promotion-content">
+                        <h3>Servicio de Spa y Relajación</h3>
+                        <p class="promotion-description">Momentos de bienestar y descanso con descuento especial</p>
+                        <div class="promotion-prices">
+                            <span class="price-old">$100.000</span>
+                            <span class="price-new">$50.000</span>
+                        </div>
+                        <div class="promotion-meta">
+                            <span class="promotion-category"><i class="fas fa-tag"></i> Servicios</span>
+                            <span class="promotion-date">Válido hasta: 05/01/2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Turismo -->
+    <section id="turismo" class="tourism-section">
+        <div class="container">
+            <h2 class="section-title">Turismo y Planes en Barrancabermeja</h2>
+            <p class="section-subtitle">Descubre los lugares más emblemáticos de la ciudad del Oro Negro</p>
+            <div class="tourism-grid">
+                <div class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="https://via.placeholder.com/600x400/8B4513/FFFFFF?text=Refineria" alt="Refinería">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Refinería de Barrancabermeja</h3>
+                        <p>Conoce el corazón industrial de la ciudad y su importancia en la industria petrolera colombiana.</p>
+                        <a href="#" class="btn-secondary">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="https://via.placeholder.com/600x400/1E90FF/FFFFFF?text=Cristo+Petrolero" alt="Cristo Petrolero">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Cristo Petrolero</h3>
+                        <p>Monumento icónico que representa la identidad petrolera de Barrancabermeja.</p>
+                        <a href="#" class="btn-secondary">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="https://via.placeholder.com/600x400/228B22/FFFFFF?text=Cienagas" alt="Ciénagas">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Ciénagas y Humedales</h3>
+                        <p>Explora la biodiversidad única de los ecosistemas acuáticos de la región.</p>
+                        <a href="#" class="btn-secondary">Ver Detalles</a>
+                    </div>
+                </div>
+                <div class="tourism-card">
+                    <div class="tourism-image">
+                        <img src="https://via.placeholder.com/600x400/FF8C00/FFFFFF?text=Rio+Magdalena" alt="Río Magdalena">
+                    </div>
+                    <div class="tourism-content">
+                        <h3>Río Magdalena</h3>
+                        <p>Navega por el río más importante de Colombia y disfruta de paisajes únicos.</p>
+                        <a href="#" class="btn-secondary">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Hoteles -->
+    <section id="hoteles" class="hotels-section">
+        <div class="container">
+            <h2 class="section-title">Hoteles y Alojamiento</h2>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://via.placeholder.com/400x300/1E90FF/FFFFFF?text=Hotel+1" alt="Hotel 1">
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Centro</h3>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Centro de Barrancabermeja</p>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="hotel-price">Desde $80.000/noche</div>
+                        <a href="#" class="btn-secondary">Ver Ofertas</a>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://via.placeholder.com/400x300/228B22/FFFFFF?text=Hotel+2" alt="Hotel 2">
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hotel Río Magdalena</h3>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Zona Norte</p>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="hotel-price">Desde $120.000/noche</div>
+                        <a href="#" class="btn-secondary">Ver Ofertas</a>
+                    </div>
+                </div>
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://via.placeholder.com/400x300/DC143C/FFFFFF?text=Hotel+3" alt="Hotel 3">
+                    </div>
+                    <div class="hotel-content">
+                        <h3>Hostal Barranca</h3>
+                        <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> Zona Sur</p>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="hotel-price">Desde $50.000/noche</div>
+                        <a href="#" class="btn-secondary">Ver Ofertas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Comidas -->
+    <section id="comidas" class="food-section">
+        <div class="container">
+            <h2 class="section-title">Comidas en Promoción</h2>
+            <div class="food-grid">
+                <div class="food-card">
+                    <div class="food-badge">2x1</div>
+                    <div class="food-image">
+                        <img src="https://via.placeholder.com/400x300/8B4513/FFFFFF?text=Comida+1" alt="Comida 1">
+                    </div>
+                    <div class="food-content">
+                        <h3>Restaurante El Petrolero</h3>
+                        <p>2x1 en platos principales todos los martes</p>
+                        <div class="food-price">$25.000</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-badge">-30%</div>
+                    <div class="food-image">
+                        <img src="https://via.placeholder.com/400x300/DC143C/FFFFFF?text=Comida+2" alt="Comida 2">
+                    </div>
+                    <div class="food-content">
+                        <h3>Comida Rápida Express</h3>
+                        <p>Descuento en combos familiares</p>
+                        <div class="food-price">$35.000</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-badge">-25%</div>
+                    <div class="food-image">
+                        <img src="https://via.placeholder.com/400x300/FF8C00/FFFFFF?text=Comida+3" alt="Comida 3">
+                    </div>
+                    <div class="food-content">
+                        <h3>Pizzería La Barranca</h3>
+                        <p>Pizzas grandes con descuento especial</p>
+                        <div class="food-price">$28.000</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <div class="food-badge">Combo</div>
+                    <div class="food-image">
+                        <img src="https://via.placeholder.com/400x300/228B22/FFFFFF?text=Comida+4" alt="Comida 4">
+                    </div>
+                    <div class="food-content">
+                        <h3>Asados del Río</h3>
+                        <p>Combo especial de fin de semana</p>
+                        <div class="food-price">$45.000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA para Comercios -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Eres un Comercio Local?</h2>
+                <p>Únete a BermejaClick.co y lleva tu negocio al siguiente nivel. Publica tus promociones y llega a miles de clientes potenciales.</p>
+                <a href="dashboard.html" class="btn-cta">Publica tu Promoción Aquí</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BermejaClick.co</h3>
+                    <p>Tu plataforma de comercio local en Barrancabermeja</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#promociones">Promociones</a></li>
+                        <li><a href="#turismo">Turismo</a></li>
+                        <li><a href="#hoteles">Hoteles</a></li>
+                        <li><a href="#comidas">Comidas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Para Comercios</h4>
+                    <ul>
+                        <li><a href="dashboard.html">Acceso Dashboard</a></li>
+                        <li><a href="#">Registro</a></li>
+                        <li><a href="#">Planes y Precios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@bermejaclick.co</li>
+                        <li><i class="fas fa-phone"></i> +57 XXX XXX XXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barrancabermeja, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BermejaClick.co - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BermejaClick.co - Tu Comercio Local en Barrancabermeja</title>
+    <link rel="stylesheet" href="<?php echo e(asset('css/styles.css')); ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1 class="logo">Bermeja<span class="logo-accent">Click</span>.co</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#promociones">Promociones</a></li>
+                    <li><a href="#turismo">Turismo</a></li>
+                    <li><a href="#hoteles">Hoteles</a></li>
+                    <li><a href="#comidas">Comidas</a></li>
+                    <li><a href="<?php echo e(route('businesses.index')); ?>">Comercios</a></li>
+                    <li><a href="<?php echo e(route('login')); ?>" class="btn-login">Acceso Comercios</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section / Banner Principal -->
+    <section class="hero" style="background-image: url('<?php echo e(asset('images/fondo-portada.jpg')); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+        <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(30, 144, 255, 0.75) 100%);"></div>
+        <div class="hero-content-wrapper">
+            <!-- Badge de Experiencia -->
+            <div class="hero-badge">
+                <span>Tu Comercio Local en Barrancabermeja</span>
+            </div>
+            
+            <!-- Título Principal -->
+            <h1 class="hero-main-title">
+                <span class="title-part-1">Tu Comercio en las</span>
+                <span class="title-part-2">Mejores Manos</span>
+            </h1>
+            
+            <!-- Descripción -->
+            <p class="hero-description">
+                Plataforma de comercio local con las mejores ofertas y promociones. 
+                Descubre restaurantes, hoteles, turismo y servicios en Barrancabermeja.
+            </p>
+            
+            <!-- Botones CTA -->
+            <div class="hero-cta-buttons">
+                <a href="#promociones" class="btn-hero btn-hero-outline">
+                    <i class="fas fa-tags"></i>
+                    Ver Promociones
+                </a>
+                <a href="<?php echo e(route('businesses.index')); ?>" class="btn-hero btn-hero-outline">
+                    <i class="fas fa-store"></i>
+                    Ver Comercios
+                </a>
+                <a href="<?php echo e(route('login')); ?>" class="btn-hero btn-hero-primary">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Acceso Comercios
+                </a>
+            </div>
+            
+            <!-- Cards de Características -->
+            <div class="hero-features">
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #4A90E2, #1E90FF);">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Comercios Verificados</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #2A9D8F, #228B22);">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Ofertas Actualizadas</h3>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #C97D60, #8B4513);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Confianza Total</h3>
+                </div>
+            </div>
+            
+            <!-- Indicador de Scroll -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtros Rápidos -->
+    <section class="quick-filters">
+        <div class="container">
+            <h2 class="section-title">Explora por Categoría</h2>
+            <div class="filters-grid">
+                <div class="filter-card" data-category="comida">
+                    <div class="filter-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Comida</h3>
+                </div>
+                <div class="filter-card" data-category="turismo">
+                    <div class="filter-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Turismo</h3>
+                </div>
+                <div class="filter-card" data-category="hoteles">
+                    <div class="filter-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Hoteles</h3>
+                </div>
+                <div class="filter-card" data-category="ropa">
+                    <div class="filter-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Ropa</h3>
+                </div>
+                <div class="filter-card" data-category="servicios">
+                    <div class="filter-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Servicios</h3>
+                </div>
+                <div class="filter-card" data-category="entretenimiento">
+                    <div class="filter-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3>Entretenimiento</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promociones Destacadas -->
+    <section id="promociones" class="featured-promotions">
+        <div class="container">
+            <h2 class="section-title">Promociones Destacadas</h2>
+            <div class="promotions-grid">
+                <?php $__empty_1 = true; $__currentLoopData = $featuredPromotions ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $promo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="promotion-card">
+                        <div class="promotion-badge">-<?php echo e(isset($promo->discount_percentage) ? $promo->discount_percentage : 0); ?>%</div>
+                        <div class="promotion-image">
+                            <?php if(isset($promo->image) && $promo->image): ?>
+                                <img src="<?php echo e(asset('storage/' . $promo->image)); ?>" alt="<?php echo e($promo->title ?? 'Promoción'); ?>">
+                            <?php else: ?>
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #8B4513 0%, #1E90FF 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
+                                    <?php echo e(isset($promo->category) && $promo->category ? ($promo->category->name ?? 'Promoción') : 'Promoción'); ?>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="promotion-content">
+                            <h3><?php echo e($promo->title ?? 'Sin título'); ?></h3>
+                            <?php if(isset($promo->business) && $promo->business): ?>
+                                <p class="promotion-business" style="color: #8B4513; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                                    <i class="fas fa-store"></i> <?php echo e($promo->business->name ?? 'Comercio'); ?>
+
+                                </p>
+                            <?php endif; ?>
+                            <p class="promotion-description"><?php echo e($promo->description ?? 'Sin descripción'); ?></p>
+                            <div class="promotion-prices">
+                                <span class="price-old">$<?php echo e(number_format($promo->price_regular ?? 0, 0, ',', '.')); ?></span>
+                                <span class="price-new">$<?php echo e(number_format($promo->price_discount ?? 0, 0, ',', '.')); ?></span>
+                            </div>
+                            <div class="promotion-meta">
+                                <span class="promotion-category"><i class="fas fa-tag"></i> <?php echo e(isset($promo->category) && $promo->category ? ($promo->category->name ?? 'General') : 'General'); ?></span>
+                                <span class="promotion-date">Válido hasta: <?php echo e(isset($promo->end_date) && $promo->end_date ? $promo->end_date->format('d/m/Y') : 'N/A'); ?></span>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <!-- Promociones de ejemplo cuando no hay datos en BD -->
+                    <?php
+                        $examplePromotions = [
+                            ['title' => '2x1 en Hamburguesas Premium', 'desc' => 'Disfruta de nuestras hamburguesas artesanales con el mejor descuento', 'old' => 25000, 'new' => 17500, 'badge' => '-30%', 'cat' => 'Comida', 'date' => '30/12/2024', 'color' => '#8B4513'],
+                            ['title' => 'Tour por el Río Magdalena', 'desc' => 'Recorrido completo por los puntos más emblemáticos de la ciudad', 'old' => 50000, 'new' => 30000, 'badge' => '-40%', 'cat' => 'Turismo', 'date' => '15/01/2025', 'color' => '#1E90FF'],
+                            ['title' => 'Noche de Hotel con Desayuno', 'desc' => 'Hospedaje cómodo en el corazón de Barrancabermeja', 'old' => 120000, 'new' => 90000, 'badge' => '-25%', 'cat' => 'Hoteles', 'date' => '20/01/2025', 'color' => '#228B22'],
+                            ['title' => 'Combo Familiar de Comida Rápida', 'desc' => 'Perfecto para compartir en familia con el mejor precio', 'old' => 45000, 'new' => 29250, 'badge' => '-35%', 'cat' => 'Comida', 'date' => '25/12/2024', 'color' => '#DC143C'],
+                            ['title' => 'Ropa de Verano - Liquidación', 'desc' => 'Las mejores prendas para el clima de Barrancabermeja', 'old' => 80000, 'new' => 64000, 'badge' => '-20%', 'cat' => 'Ropa', 'date' => '10/01/2025', 'color' => '#FF8C00'],
+                            ['title' => 'Servicio de Spa y Relajación', 'desc' => 'Momentos de bienestar y descanso con descuento especial', 'old' => 100000, 'new' => 50000, 'badge' => '-50%', 'cat' => 'Servicios', 'date' => '05/01/2025', 'color' => '#4B0082'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $examplePromotions; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $example): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="promotion-card">
+                            <div class="promotion-badge"><?php echo e($example['badge']); ?></div>
+                            <div class="promotion-image">
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, <?php echo e($example['color']); ?> 0%, <?php echo e($example['color']); ?>dd 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 600; text-align: center; padding: 1rem;">
+                                    <?php echo e($example['title']); ?>
+
+                                </div>
+                            </div>
+                            <div class="promotion-content">
+                                <h3><?php echo e($example['title']); ?></h3>
+                                <?php
+                                    $businessNames = [
+                                        '2x1 en Hamburguesas Premium' => 'Restaurante El Petrolero',
+                                        'Tour por el Río Magdalena' => 'Tours del Río Magdalena',
+                                        'Noche de Hotel con Desayuno' => 'Hotel Centro Barrancabermeja',
+                                        'Combo Familiar de Comida Rápida' => 'Comida Rápida Express',
+                                        'Ropa de Verano - Liquidación' => 'Moda Barranca',
+                                        'Servicio de Spa y Relajación' => 'Spa y Relajación Barranca',
+                                    ];
+                                ?>
+                                <p class="promotion-business" style="color: #8B4513; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                                    <i class="fas fa-store"></i> <?php echo e($businessNames[$example['title']] ?? 'Comercio Local'); ?>
+
+                                </p>
+                                <p class="promotion-description"><?php echo e($example['desc']); ?></p>
+                                <div class="promotion-prices">
+                                    <span class="price-old">$<?php echo e(number_format($example['old'], 0, ',', '.')); ?></span>
+                                    <span class="price-new">$<?php echo e(number_format($example['new'], 0, ',', '.')); ?></span>
+                                </div>
+                                <div class="promotion-meta">
+                                    <span class="promotion-category"><i class="fas fa-tag"></i> <?php echo e($example['cat']); ?></span>
+                                    <span class="promotion-date">Válido hasta: <?php echo e($example['date']); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Turismo -->
+    <section id="turismo" class="tourism-section">
+        <div class="container">
+            <h2 class="section-title">Turismo y Planes en Barrancabermeja</h2>
+            <p class="section-subtitle">Descubre los lugares más emblemáticos de la ciudad del Oro Negro</p>
+            <div class="tourism-grid">
+                <?php $__empty_1 = true; $__currentLoopData = $tourismPlaces ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $place): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="tourism-card">
+                        <div class="tourism-image">
+                            <?php if(isset($place->cover_image) && $place->cover_image): ?>
+                                <img src="<?php echo e(asset('storage/' . $place->cover_image)); ?>" alt="<?php echo e($place->name ?? 'Lugar'); ?>">
+                            <?php else: ?>
+                                <div style="width: 100%; height: 250px; background: linear-gradient(135deg, #1E90FF 0%, #228B22 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.3rem; font-weight: 600; text-align: center; padding: 1rem;">
+                                    <?php echo e($place->name ?? 'Lugar Turístico'); ?>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="tourism-content">
+                            <h3><?php echo e($place->name ?? 'Sin nombre'); ?></h3>
+                            <p style="color: #8B4513; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.95rem;">
+                                <i class="fas fa-store"></i> <?php echo e($place->name ?? 'Lugar'); ?>
+
+                            </p>
+                            <p><?php echo e($place->description ?? 'Descubre este increíble lugar en Barrancabermeja.'); ?></p>
+                            <a href="#" class="btn-secondary">Ver Detalles</a>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <?php
+                        $tourismPlaces = [
+                            ['name' => 'Refinería de Barrancabermeja', 'desc' => 'Conoce el corazón industrial de la ciudad y su importancia en la industria petrolera colombiana.', 'color' => '#8B4513'],
+                            ['name' => 'Cristo Petrolero', 'desc' => 'Monumento icónico que representa la identidad petrolera de Barrancabermeja.', 'color' => '#1E90FF'],
+                            ['name' => 'Ciénagas y Humedales', 'desc' => 'Explora la biodiversidad única de los ecosistemas acuáticos de la región.', 'color' => '#228B22'],
+                            ['name' => 'Río Magdalena', 'desc' => 'Navega por el río más importante de Colombia y disfruta de paisajes únicos.', 'color' => '#FF8C00'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $tourismPlaces; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $place): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="tourism-card">
+                            <div class="tourism-image">
+                                <div style="width: 100%; height: 250px; background: linear-gradient(135deg, <?php echo e($place['color']); ?> 0%, <?php echo e($place['color']); ?>dd 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600; text-align: center; padding: 1rem;">
+                                    <?php echo e($place['name']); ?>
+
+                                </div>
+                            </div>
+                            <div class="tourism-content">
+                                <h3><?php echo e($place['name']); ?></h3>
+                                <p><?php echo e($place['desc']); ?></p>
+                                <a href="#" class="btn-secondary">Ver Detalles</a>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Hoteles -->
+    <section id="hoteles" class="hotels-section">
+        <div class="container">
+            <h2 class="section-title">Hoteles y Alojamiento</h2>
+            <div class="hotels-grid">
+                <?php $__empty_1 = true; $__currentLoopData = $hotelPromotions ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="hotel-card">
+                        <div class="hotel-image">
+                            <?php if($hotel->cover_image): ?>
+                                <img src="<?php echo e(asset('storage/' . $hotel->cover_image)); ?>" alt="<?php echo e($hotel->name); ?>">
+                            <?php else: ?>
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #1E90FF 0%, #228B22 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
+                                    <?php echo e($hotel->name); ?>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="hotel-content">
+                            <h3><?php echo e($hotel->name); ?></h3>
+                            <p style="color: #8B4513; font-weight: 600; margin-bottom: 0.3rem; font-size: 0.95rem;">
+                                <i class="fas fa-store"></i> <?php echo e($hotel->name); ?>
+
+                            </p>
+                            <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> <?php echo e($hotel->address ?? 'Barrancabermeja'); ?></p>
+                            <div class="hotel-rating">
+                                <?php for($i = 1; $i <= 5; $i++): ?>
+                                    <i class="<?php echo e($i <= round($hotel->rating ?? 4) ? 'fas' : 'far'); ?> fa-star"></i>
+                                <?php endfor; ?>
+                            </div>
+                            <div class="hotel-price">Desde $<?php echo e(number_format($hotel->rating * 20000 ?? 80000, 0, ',', '.')); ?>/noche</div>
+                            <a href="#" class="btn-secondary">Ver Ofertas</a>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <?php
+                        $hotels = [
+                            ['name' => 'Hotel Centro', 'location' => 'Centro de Barrancabermeja', 'rating' => 4, 'price' => 80000, 'color' => '#1E90FF'],
+                            ['name' => 'Hotel Río Magdalena', 'location' => 'Zona Norte', 'rating' => 5, 'price' => 120000, 'color' => '#228B22'],
+                            ['name' => 'Hostal Barranca', 'location' => 'Zona Sur', 'rating' => 3, 'price' => 50000, 'color' => '#DC143C'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $hotels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $hotel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="hotel-card">
+                            <div class="hotel-image">
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, <?php echo e($hotel['color']); ?> 0%, <?php echo e($hotel['color']); ?>dd 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
+                                    <?php echo e($hotel['name']); ?>
+
+                                </div>
+                            </div>
+                            <div class="hotel-content">
+                                <h3><?php echo e($hotel['name']); ?></h3>
+                                <p class="hotel-location"><i class="fas fa-map-marker-alt"></i> <?php echo e($hotel['location']); ?></p>
+                                <div class="hotel-rating">
+                                    <?php for($i = 1; $i <= 5; $i++): ?>
+                                        <i class="<?php echo e($i <= $hotel['rating'] ? 'fas' : 'far'); ?> fa-star"></i>
+                                    <?php endfor; ?>
+                                </div>
+                                <div class="hotel-price">Desde $<?php echo e(number_format($hotel['price'], 0, ',', '.')); ?>/noche</div>
+                                <a href="#" class="btn-secondary">Ver Ofertas</a>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Comidas -->
+    <section id="comidas" class="food-section">
+        <div class="container">
+            <h2 class="section-title">Comidas en Promoción</h2>
+            <div class="food-grid">
+                <?php $__empty_1 = true; $__currentLoopData = $foodPromotions ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $food): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="food-card">
+                        <div class="food-badge">-<?php echo e($food->discount_percentage); ?>%</div>
+                        <div class="food-image">
+                            <?php if($food->image): ?>
+                                <img src="<?php echo e(asset('storage/' . $food->image)); ?>" alt="<?php echo e($food->title); ?>">
+                            <?php else: ?>
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #8B4513 0%, #DC143C 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 600; text-align: center; padding: 1rem;">
+                                    <?php echo e($food->business->name ?? $food->title); ?>
+
+                                </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="food-content">
+                            <h3><?php echo e($food->business->name ?? 'Restaurante'); ?></h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;"><?php echo e($food->title); ?></p>
+                            <?php if($food->business): ?>
+                                <p style="color: #8B4513; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">
+                                    <i class="fas fa-store"></i> <?php echo e($food->business->name); ?>
+
+                                </p>
+                            <?php endif; ?>
+                            <div class="food-price">$<?php echo e(number_format($food->price_discount, 0, ',', '.')); ?></div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <?php
+                        $foods = [
+                            ['name' => 'Restaurante El Petrolero', 'desc' => '2x1 en platos principales todos los martes', 'price' => 25000, 'badge' => '2x1', 'color' => '#8B4513'],
+                            ['name' => 'Comida Rápida Express', 'desc' => 'Descuento en combos familiares', 'price' => 35000, 'badge' => '-30%', 'color' => '#DC143C'],
+                            ['name' => 'Pizzería La Barranca', 'desc' => 'Pizzas grandes con descuento especial', 'price' => 28000, 'badge' => '-25%', 'color' => '#FF8C00'],
+                            ['name' => 'Asados del Río', 'desc' => 'Combo especial de fin de semana', 'price' => 45000, 'badge' => 'Combo', 'color' => '#228B22'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $foods; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $food): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="food-card">
+                            <div class="food-badge"><?php echo e($food['badge']); ?></div>
+                            <div class="food-image">
+                                <div style="width: 100%; height: 200px; background: linear-gradient(135deg, <?php echo e($food['color']); ?> 0%, <?php echo e($food['color']); ?>dd 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.1rem; font-weight: 600; text-align: center; padding: 1rem;">
+                                    <?php echo e($food['name']); ?>
+
+                                </div>
+                            </div>
+                            <div class="food-content">
+                                <h3><?php echo e($food['name']); ?></h3>
+                                <p><?php echo e($food['desc']); ?></p>
+                                <div class="food-price">$<?php echo e(number_format($food['price'], 0, ',', '.')); ?></div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Influencers Barranqueños -->
+    <section id="influencers" class="influencers-section">
+        <div class="container">
+            <h2 class="section-title">Influencers Barranqueños</h2>
+            <p class="section-subtitle">Conoce a los creadores de contenido que están dando a conocer lo mejor de Barrancabermeja</p>
+            <div class="influencers-grid">
+                <?php $__empty_1 = true; $__currentLoopData = $influencers ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $influencer): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                    <div class="influencer-card">
+                        <div class="influencer-header">
+                            <div class="influencer-avatar">
+                                <?php if($influencer->profile_image): ?>
+                                    <img src="<?php echo e(asset('storage/' . $influencer->profile_image)); ?>" alt="<?php echo e($influencer->name); ?>">
+                                <?php else: ?>
+                                    <div class="avatar-placeholder" style="background: linear-gradient(135deg, #8B4513 0%, #1E90FF 100%);">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="influencer-badge">
+                                <span><?php echo e($influencer->specialty ?? 'Influencer'); ?></span>
+                            </div>
+                        </div>
+                        <div class="influencer-content">
+                            <h3><?php echo e($influencer->name); ?></h3>
+                            <p class="influencer-nickname"><?php echo e($influencer->nickname ?? ''); ?></p>
+                            <p class="influencer-bio"><?php echo e(Str::limit($influencer->bio ?? 'Creador de contenido local', 80)); ?></p>
+                            <div class="influencer-stats">
+                                <div class="stat-item">
+                                    <i class="fab fa-instagram"></i>
+                                    <span><?php echo e(number_format($influencer->instagram_followers ?? 0, 0, ',', '.')); ?></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fab fa-tiktok"></i>
+                                    <span><?php echo e(number_format($influencer->tiktok_followers ?? 0, 0, ',', '.')); ?></span>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fab fa-youtube"></i>
+                                    <span><?php echo e(number_format($influencer->youtube_subscribers ?? 0, 0, ',', '.')); ?></span>
+                                </div>
+                            </div>
+                            <div class="influencer-social">
+                                <?php if($influencer->social_media && isset($influencer->social_media['instagram'])): ?>
+                                    <a href="<?php echo e($influencer->social_media['instagram']); ?>" target="_blank" class="social-link instagram" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if($influencer->social_media && isset($influencer->social_media['tiktok'])): ?>
+                                    <a href="<?php echo e($influencer->social_media['tiktok']); ?>" target="_blank" class="social-link tiktok" title="TikTok">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                <?php endif; ?>
+                                <?php if($influencer->social_media && isset($influencer->social_media['youtube'])): ?>
+                                    <a href="<?php echo e($influencer->social_media['youtube']); ?>" target="_blank" class="social-link youtube" title="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+                    <?php
+                        $exampleInfluencers = [
+                            ['name' => 'María González', 'nickname' => '@mariabarranca', 'specialty' => 'Comida', 'bio' => 'Influencer de comida y gastronomía local', 'instagram' => 12500, 'tiktok' => 8500, 'youtube' => 3200, 'color' => '#8B4513'],
+                            ['name' => 'Carlos Ramírez', 'nickname' => '@carlosbarranca_travel', 'specialty' => 'Turismo', 'bio' => 'Explorador de los rincones más hermosos', 'instagram' => 18900, 'tiktok' => 12000, 'youtube' => 5600, 'color' => '#1E90FF'],
+                            ['name' => 'Ana Martínez', 'nickname' => '@anabarranca_style', 'specialty' => 'Moda', 'bio' => 'Fashionista local y tendencias', 'instagram' => 9800, 'tiktok' => 15200, 'youtube' => 2100, 'color' => '#DC143C'],
+                        ];
+                    ?>
+                    <?php $__currentLoopData = $exampleInfluencers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $inf): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <div class="influencer-card">
+                            <div class="influencer-header">
+                                <div class="influencer-avatar">
+                                    <div class="avatar-placeholder" style="background: linear-gradient(135deg, <?php echo e($inf['color']); ?> 0%, <?php echo e($inf['color']); ?>dd 100%);">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="influencer-badge">
+                                    <span><?php echo e($inf['specialty']); ?></span>
+                                </div>
+                            </div>
+                            <div class="influencer-content">
+                                <h3><?php echo e($inf['name']); ?></h3>
+                                <p class="influencer-nickname"><?php echo e($inf['nickname']); ?></p>
+                                <p class="influencer-bio"><?php echo e($inf['bio']); ?></p>
+                                <div class="influencer-stats">
+                                    <div class="stat-item">
+                                        <i class="fab fa-instagram"></i>
+                                        <span><?php echo e(number_format($inf['instagram'], 0, ',', '.')); ?></span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fab fa-tiktok"></i>
+                                        <span><?php echo e(number_format($inf['tiktok'], 0, ',', '.')); ?></span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fab fa-youtube"></i>
+                                        <span><?php echo e(number_format($inf['youtube'], 0, ',', '.')); ?></span>
+                                    </div>
+                                </div>
+                                <div class="influencer-social">
+                                    <a href="#" class="social-link instagram" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-link tiktok" title="TikTok">
+                                        <i class="fab fa-tiktok"></i>
+                                    </a>
+                                    <a href="#" class="social-link youtube" title="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA para Comercios -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Explora Nuestros Comercios</h2>
+                <p>Descubre los mejores establecimientos de Barrancabermeja. Conoce sus perfiles, servicios y promociones activas.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <a href="<?php echo e(route('businesses.index')); ?>" class="btn-cta" style="background: var(--color-secondary);">
+                        <i class="fas fa-store"></i> Ver Todos los Comercios
+                    </a>
+                    <a href="<?php echo e(route('login')); ?>" class="btn-cta" style="background: transparent; border: 2px solid white;">
+                        <i class="fas fa-sign-in-alt"></i> Acceso para Comercios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BermejaClick.co</h3>
+                    <p>Tu plataforma de comercio local en Barrancabermeja</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#promociones">Promociones</a></li>
+                        <li><a href="#turismo">Turismo</a></li>
+                        <li><a href="#hoteles">Hoteles</a></li>
+                        <li><a href="#comidas">Comidas</a></li>
+                        <li><a href="<?php echo e(route('businesses.index')); ?>">Comercios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Para Comercios</h4>
+                    <ul>
+                        <li><a href="<?php echo e(route('login')); ?>">Acceso Dashboard</a></li>
+                        <li><a href="<?php echo e(route('login')); ?>">Acceso Comercios</a></li>
+                        <li><a href="#">Planes y Precios</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@bermejaclick.co</li>
+                        <li><i class="fas fa-phone"></i> +57 XXX XXX XXXX</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Barrancabermeja, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <?php echo e(date('Y')); ?> BermejaClick.co - Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="<?php echo e(asset('js/main.js')); ?>"></script>
+</body>
+</html>
+
+<?php /**PATH C:\laragon\www\BermejaClick\resources\views/home.blade.php ENDPATH**/ ?>
