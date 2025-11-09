@@ -1,0 +1,22 @@
+{
+  "name": "bermejaclick-deploy",
+  "version": "1.0.0",
+  "description": "Scripts de despliegue para BermejaClick",
+  "scripts": {
+    "deploy": "node deploy-to-hostinger.js",
+    "deploy:quick": "node deploy-quick.js",
+    "setup": "npm install"
+  },
+  "dependencies": {
+    "basic-ftp": "^5.0.3"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "deploy",
+    "hostinger",
+    "ftp"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

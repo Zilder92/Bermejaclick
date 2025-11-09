@@ -1,0 +1,20 @@
+{
+  "host": "TU_HOST_FTP_AQUI",
+  "user": "TU_USUARIO_FTP_AQUI",
+  "password": "TU_CONTRASEÑA_FTP_AQUI",
+  "port": 21,
+  "secure": false,
+  "remotePath": "/public_html",
+  "url": "https://bermejaclick.maurox.site",
+  "verbose": false,
+  "instructions": {
+    "host": "Encuéntralo en: Panel Hostinger → Archivos → FTP Accounts → Servidor FTP. Ejemplo: ftp.bermejaclick.com",
+    "user": "Encuéntralo en: Panel Hostinger → Archivos → FTP Accounts → Usuario FTP. Ejemplo: u123456789",
+    "password": "Encuéntralo en: Panel Hostinger → Archivos → FTP Accounts → Contraseña FTP",
+    "port": "21 para FTP, 22 para SFTP",
+    "secure": "false para FTP, true para SFTP",
+    "remotePath": "Ruta donde están tus archivos. Generalmente /public_html",
+    "url": "Tu dominio completo. Ejemplo: https://bermejaclick.com",
+    "verbose": "true para ver más detalles, false para modo normal"
+  }
+}
