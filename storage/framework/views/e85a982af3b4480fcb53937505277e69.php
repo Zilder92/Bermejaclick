@@ -16,55 +16,110 @@
             position: relative;
         }
 
-        /* Header Moderno con Gradiente Vibrante */
+        /* Header con Carrusel de Imágenes */
         .businesses-hero {
-            background: linear-gradient(135deg, 
-                #C97D60 0%, 
-                #E63946 25%, 
-                #4A90E2 50%, 
-                #2A9D8F 75%, 
-                #F77F00 100%
-            );
-            background-size: 300% 300%;
-            animation: gradientFlow 15s ease infinite;
-            padding: var(--spacing-xxl) 0 var(--spacing-lg);
             position: relative;
             overflow: hidden;
             margin-bottom: var(--spacing-lg);
+            height: 700px;
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @media (max-width: 768px) {
+            .businesses-hero {
+                height: 500px;
+            }
         }
 
-        .businesses-hero::before {
+        @media (max-width: 480px) {
+            .businesses-hero {
+                height: 450px;
+            }
+        }
+
+        .header-image-carousel {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .carousel-slide::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(230, 57, 70, 0.1) 0%, transparent 60%),
-                radial-gradient(circle at 10% 80%, rgba(42, 157, 143, 0.08) 0%, transparent 55%);
-            pointer-events: none;
-            animation: pulseGlow 8s ease-in-out infinite;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+            z-index: 1;
         }
 
-        @keyframes pulseGlow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .carousel-indicator.active {
+            background: var(--color-white);
+            width: 32px;
+            border-radius: 6px;
+            border-color: var(--color-white);
+        }
+
+        .carousel-indicator:hover {
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .businesses-hero-content {
-            position: relative;
-            z-index: 2;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
             text-align: center;
             color: white;
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 var(--spacing-md);
         }
 
         .businesses-hero h1 {
@@ -688,7 +743,23 @@
     <div class="businesses-page">
         <!-- Hero Section -->
         <div class="businesses-hero">
-            <div class="container">
+            <div class="header-image-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-slide active" style="background-image: url('<?php echo e(asset('images/barrancabermeja/Barrancabermeja_1.jpg')); ?>');"></div>
+                    <div class="carousel-slide" style="background-image: url('<?php echo e(asset('images/barrancabermeja/Barrancabermeja_2.jpg')); ?>');"></div>
+                    <div class="carousel-slide" style="background-image: url('<?php echo e(asset('images/barrancabermeja/Barrancabermeja_3.jpg')); ?>');"></div>
+                    <div class="carousel-slide" style="background-image: url('<?php echo e(asset('images/barrancabermeja/Barrancabermeja_4.jpg')); ?>');"></div>
+                    <div class="carousel-slide" style="background-image: url('<?php echo e(asset('images/barrancabermeja/Barrancabermeja_5.jpg')); ?>');"></div>
+                </div>
+                
+                <div class="carousel-indicators">
+                    <div class="carousel-indicator active" data-slide="0"></div>
+                    <div class="carousel-indicator" data-slide="1"></div>
+                    <div class="carousel-indicator" data-slide="2"></div>
+                    <div class="carousel-indicator" data-slide="3"></div>
+                    <div class="carousel-indicator" data-slide="4"></div>
+                </div>
+
                 <div class="businesses-hero-content">
                     <h1>Nuestros Comercios</h1>
                     <p>Descubre los mejores establecimientos de Barrancabermeja y sus increíbles promociones</p>
@@ -845,6 +916,51 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Carrusel de Imágenes del Header
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            if (slides.length === 0) return;
+
+            function showSlide(index) {
+                // Remover clase active de todos los slides e indicadores
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+
+                // Agregar clase active al slide e indicador actual
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                }
+                if (indicators[index]) {
+                    indicators[index].classList.add('active');
+                }
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+
+            // Event listeners para indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+
+            // Auto-play del carrusel (cambia cada 5 segundos)
+            setInterval(nextSlide, 5000);
+
+            // Inicializar primer slide
+            showSlide(0);
+        });
+    </script>
 </body>
 </html>
 <?php /**PATH C:\laragon\www\BermejaClick\resources\views/businesses.blade.php ENDPATH**/ ?>

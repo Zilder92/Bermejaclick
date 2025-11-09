@@ -649,13 +649,11 @@ body > * {
     font-weight: 800;
     text-align: center;
     margin-bottom: var(--spacing-md);
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1E3A5F; /* Azul oscuro profesional y moderno */
     letter-spacing: -0.02em;
     position: relative;
     padding-bottom: var(--spacing-sm);
+    text-shadow: 0 2px 4px rgba(30, 58, 95, 0.1);
 }
 
 .section-title::after {
@@ -666,7 +664,7 @@ body > * {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: var(--gradient-primary);
+    background: linear-gradient(90deg, #4A90E2 0%, #2A9D8F 100%); /* Gradiente azul-verde moderno */
     border-radius: var(--radius-full);
 }
 
@@ -745,8 +743,13 @@ body > * {
 
 .filter-card h3 {
     font-size: 1.1rem;
-    color: var(--color-dark);
+    color: #2D3748; /* Gris oscuro moderno y sofisticado */
     font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.filter-card:hover h3 {
+    color: #1E3A5F; /* Azul oscuro al hacer hover */
 }
 
 /* ============================================
@@ -853,14 +856,16 @@ body > * {
 
 .promotion-content h3 {
     font-size: 1.3rem;
-    color: var(--color-primary);
+    color: #1E3A5F; /* Azul oscuro profesional - mismo que títulos de sección */
     margin-bottom: var(--spacing-xs);
+    font-weight: 700;
 }
 
 .promotion-description {
-    color: var(--color-gray);
+    color: #4A5568; /* Gris medio moderno para mejor legibilidad */
     margin-bottom: var(--spacing-sm);
     font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .promotion-prices {
@@ -913,9 +918,11 @@ body > * {
 
 .section-subtitle {
     text-align: center;
-    color: var(--color-gray);
+    color: #4A5568; /* Gris medio moderno */
     margin-bottom: var(--spacing-md);
     font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
 }
 
 .tourism-grid {
@@ -963,15 +970,16 @@ body > * {
 
 .tourism-content h3 {
     font-size: 1.4rem;
-    color: #1A1A1A;
+    color: #1E3A5F; /* Azul oscuro profesional - consistente con otros títulos */
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
 }
 
 .tourism-content p {
-    color: #4A4A4A;
+    color: #4A5568; /* Gris medio moderno - mejor legibilidad */
     font-weight: 500;
     margin-bottom: var(--spacing-sm);
+    line-height: 1.6;
 }
 
 .btn-secondary {
