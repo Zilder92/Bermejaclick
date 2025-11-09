@@ -723,7 +723,6 @@ body > * {
     width: 80px;
     height: 80px;
     margin: 0 auto var(--spacing-sm);
-    background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -736,9 +735,63 @@ body > * {
     z-index: 1;
 }
 
+/* Colores únicos para cada categoría */
+.filter-card[data-category="comida"] .filter-icon {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+    box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4);
+}
+
+.filter-card[data-category="turismo"] .filter-icon {
+    background: linear-gradient(135deg, #4ECDC4 0%, #44A3D8 100%);
+    box-shadow: 0 4px 20px rgba(78, 205, 196, 0.4);
+}
+
+.filter-card[data-category="hoteles"] .filter-icon {
+    background: linear-gradient(135deg, #A78BFA 0%, #8B5CF6 100%);
+    box-shadow: 0 4px 20px rgba(167, 139, 250, 0.4);
+}
+
+.filter-card[data-category="ropa"] .filter-icon {
+    background: linear-gradient(135deg, #F472B6 0%, #EC4899 100%);
+    box-shadow: 0 4px 20px rgba(244, 114, 182, 0.4);
+}
+
+.filter-card[data-category="servicios"] .filter-icon {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+.filter-card[data-category="entretenimiento"] .filter-icon {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.4);
+}
+
 .filter-card:hover .filter-icon {
     transform: rotate(360deg) scale(1.1);
-    box-shadow: var(--shadow-colored);
+}
+
+.filter-card[data-category="comida"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(255, 107, 107, 0.6);
+}
+
+.filter-card[data-category="turismo"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(78, 205, 196, 0.6);
+}
+
+.filter-card[data-category="hoteles"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(167, 139, 250, 0.6);
+}
+
+.filter-card[data-category="ropa"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(244, 114, 182, 0.6);
+}
+
+.filter-card[data-category="servicios"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.6);
+}
+
+.filter-card[data-category="entretenimiento"]:hover .filter-icon {
+    box-shadow: 0 6px 30px rgba(251, 191, 36, 0.6);
 }
 
 .filter-card h3 {
