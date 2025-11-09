@@ -58,15 +58,15 @@
             
             <!-- Botones CTA -->
             <div class="hero-cta-buttons">
-                <a href="#promociones" class="btn-hero btn-hero-outline">
+                <a href="#promociones" class="btn-hero btn-hero-primary-accent">
                     <i class="fas fa-tags"></i>
                     Ver Promociones
                 </a>
-                <a href="{{ route('businesses.index') }}" class="btn-hero btn-hero-outline">
+                <a href="{{ route('businesses.index') }}" class="btn-hero btn-hero-secondary">
                     <i class="fas fa-store"></i>
                     Ver Comercios
                 </a>
-                <a href="{{ route('login') }}" class="btn-hero btn-hero-primary">
+                <a href="{{ route('login') }}" class="btn-hero btn-hero-secondary">
                     <i class="fas fa-sign-in-alt"></i>
                     Acceso Comercios
                 </a>
@@ -358,7 +358,10 @@
             <div class="food-grid">
                 @forelse($foodPromotions ?? [] as $food)
                     <div class="food-card">
-                        <div class="food-badge">-{{ $food->discount_percentage }}%</div>
+                        @php
+                            $foodDiscount = isset($food->discount_percentage) ? min($food->discount_percentage, 99) : 0;
+                        @endphp
+                        <div class="food-badge">-{{ $foodDiscount }}%</div>
                         <div class="food-image">
                             @if($food->image)
                                 <img src="{{ asset('storage/' . $food->image) }}" alt="{{ $food->title }}">
@@ -369,13 +372,10 @@
                             @endif
                         </div>
                         <div class="food-content">
-                            <h3>{{ $food->business->name ?? 'Restaurante' }}</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 0.5rem;">{{ $food->title }}</p>
-                            @if($food->business)
-                                <p style="color: #8B4513; font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem;">
-                                    <i class="fas fa-store"></i> {{ $food->business->name }}
-                                </p>
-                            @endif
+                            <h3 style="font-size: 1.4rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.5rem;">
+                                {{ $food->business->name ?? 'Restaurante' }}
+                            </h3>
+                            <p style="color: #666; font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 500;">{{ $food->title }}</p>
                             <div class="food-price">${{ number_format($food->price_discount, 0, ',', '.') }}</div>
                         </div>
                     </div>
@@ -397,8 +397,10 @@
                                 </div>
                             </div>
                             <div class="food-content">
-                                <h3>{{ $food['name'] }}</h3>
-                                <p>{{ $food['desc'] }}</p>
+                                <h3 style="font-size: 1.4rem; font-weight: 700; color: #1A1A1A; margin-bottom: 0.5rem;">
+                                    {{ $food['name'] }}
+                                </h3>
+                                <p style="color: #666; font-size: 0.95rem; margin-bottom: 0.5rem; font-weight: 500;">{{ $food['desc'] }}</p>
                                 <div class="food-price">${{ number_format($food['price'], 0, ',', '.') }}</div>
                             </div>
                         </div>
@@ -435,33 +437,30 @@
                             <p class="influencer-nickname">{{ $influencer->nickname ?? '' }}</p>
                             <p class="influencer-bio">{{ Str::limit($influencer->bio ?? 'Creador de contenido local', 80) }}</p>
                             <div class="influencer-stats">
-                                <div class="stat-item">
-                                    <i class="fab fa-instagram"></i>
-                                    <span>{{ number_format($influencer->instagram_followers ?? 0, 0, ',', '.') }}</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fab fa-tiktok"></i>
-                                    <span>{{ number_format($influencer->tiktok_followers ?? 0, 0, ',', '.') }}</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fab fa-youtube"></i>
-                                    <span>{{ number_format($influencer->youtube_subscribers ?? 0, 0, ',', '.') }}</span>
+                                @php
+                                    $mainFollowers = max(
+                                        $influencer->instagram_followers ?? 0,
+                                        $influencer->tiktok_followers ?? 0,
+                                        $influencer->youtube_subscribers ?? 0
+                                    );
+                                    $mainPlatform = 'instagram';
+                                    if (($influencer->tiktok_followers ?? 0) === $mainFollowers) {
+                                        $mainPlatform = 'tiktok';
+                                    } elseif (($influencer->youtube_subscribers ?? 0) === $mainFollowers) {
+                                        $mainPlatform = 'youtube';
+                                    }
+                                @endphp
+                                <div class="stat-item stat-item-main">
+                                    <i class="fab fa-{{ $mainPlatform === 'tiktok' ? 'tiktok' : ($mainPlatform === 'youtube' ? 'youtube' : 'instagram') }}"></i>
+                                    <span class="stat-number">{{ number_format($mainFollowers, 0, ',', '.') }}</span>
+                                    <span class="stat-label">seguidores</span>
                                 </div>
                             </div>
                             <div class="influencer-social">
-                                @if($influencer->social_media && isset($influencer->social_media['instagram']))
-                                    <a href="{{ $influencer->social_media['instagram'] }}" target="_blank" class="social-link instagram" title="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                @endif
-                                @if($influencer->social_media && isset($influencer->social_media['tiktok']))
-                                    <a href="{{ $influencer->social_media['tiktok'] }}" target="_blank" class="social-link tiktok" title="TikTok">
-                                        <i class="fab fa-tiktok"></i>
-                                    </a>
-                                @endif
-                                @if($influencer->social_media && isset($influencer->social_media['youtube']))
-                                    <a href="{{ $influencer->social_media['youtube'] }}" target="_blank" class="social-link youtube" title="YouTube">
-                                        <i class="fab fa-youtube"></i>
+                                @if($influencer->social_media && isset($influencer->social_media[$mainPlatform]))
+                                    <a href="{{ $influencer->social_media[$mainPlatform] }}" target="_blank" class="social-link {{ $mainPlatform }}" title="{{ ucfirst($mainPlatform) }}">
+                                        <i class="fab fa-{{ $mainPlatform === 'tiktok' ? 'tiktok' : ($mainPlatform === 'youtube' ? 'youtube' : 'instagram') }}"></i>
+                                        Ver perfil
                                     </a>
                                 @endif
                             </div>
@@ -491,29 +490,26 @@
                                 <h3>{{ $inf['name'] }}</h3>
                                 <p class="influencer-nickname">{{ $inf['nickname'] }}</p>
                                 <p class="influencer-bio">{{ $inf['bio'] }}</p>
+                                @php
+                                    $mainFollowers = max($inf['instagram'], $inf['tiktok'], $inf['youtube']);
+                                    $mainPlatform = 'instagram';
+                                    if ($inf['tiktok'] === $mainFollowers) {
+                                        $mainPlatform = 'tiktok';
+                                    } elseif ($inf['youtube'] === $mainFollowers) {
+                                        $mainPlatform = 'youtube';
+                                    }
+                                @endphp
                                 <div class="influencer-stats">
-                                    <div class="stat-item">
-                                        <i class="fab fa-instagram"></i>
-                                        <span>{{ number_format($inf['instagram'], 0, ',', '.') }}</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="fab fa-tiktok"></i>
-                                        <span>{{ number_format($inf['tiktok'], 0, ',', '.') }}</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="fab fa-youtube"></i>
-                                        <span>{{ number_format($inf['youtube'], 0, ',', '.') }}</span>
+                                    <div class="stat-item stat-item-main">
+                                        <i class="fab fa-{{ $mainPlatform === 'tiktok' ? 'tiktok' : ($mainPlatform === 'youtube' ? 'youtube' : 'instagram') }}"></i>
+                                        <span class="stat-number">{{ number_format($mainFollowers, 0, ',', '.') }}</span>
+                                        <span class="stat-label">seguidores</span>
                                     </div>
                                 </div>
                                 <div class="influencer-social">
-                                    <a href="#" class="social-link instagram" title="Instagram">
-                                        <i class="fab fa-instagram"></i>
-                                    </a>
-                                    <a href="#" class="social-link tiktok" title="TikTok">
-                                        <i class="fab fa-tiktok"></i>
-                                    </a>
-                                    <a href="#" class="social-link youtube" title="YouTube">
-                                        <i class="fab fa-youtube"></i>
+                                    <a href="#" class="social-link {{ $mainPlatform }}" title="{{ ucfirst($mainPlatform) }}">
+                                        <i class="fab fa-{{ $mainPlatform === 'tiktok' ? 'tiktok' : ($mainPlatform === 'youtube' ? 'youtube' : 'instagram') }}"></i>
+                                        Ver perfil
                                     </a>
                                 </div>
                             </div>
